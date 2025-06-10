@@ -152,17 +152,22 @@ section {
 
 .works__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
 }
 
 .work-card {
     background: var(--bg-white);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 
 .work-card:hover {
@@ -173,6 +178,7 @@ section {
 .work-card__image {
     aspect-ratio: 16/9;
     overflow: hidden;
+    min-height: 220px;
 }
 
 .work-card__image img {
@@ -182,7 +188,11 @@ section {
 }
 
 .work-card__content {
-    padding: var(--spacing-md);
+    flex: 1;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .work-card__title {
@@ -306,6 +316,12 @@ section {
 }
 
 /* レスポンシブ対応 */
+@media (max-width: 1100px) {
+    .works__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --spacing-lg: 3rem;
@@ -326,6 +342,14 @@ section {
 
     .works__grid {
         grid-template-columns: 1fr;
+    }
+
+    .work-card__content {
+        padding: var(--spacing-md);
+    }
+
+    .work-card {
+        min-height: 320px;
     }
 
     .contact__links {
