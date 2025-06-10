@@ -28,8 +28,8 @@ html {
 body {
     font-family: 'Noto Sans JP', 'Inter', sans-serif;
     line-height: 1.6;
-    color: var(--text-gray);
-    background-color: var(--bg-white);
+    color: #f7fafc;
+    background-color: #1a202c;
 }
 
 .container {
