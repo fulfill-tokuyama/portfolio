@@ -1,0 +1,349 @@
+/* リセットCSS */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 変数定義 */
+:root {
+    --primary-dark: #1a202c;
+    --secondary-dark: #2d3748;
+    --accent-blue: #3182ce;
+    --bg-white: #ffffff;
+    --text-gray: #4a5568;
+    --text-light: #718096;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --container-width: 1200px;
+}
+
+/* 基本設定 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-gray);
+    background-color: var(--bg-white);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* タイポグラフィ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-dark);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+/* ヒーローセクション */
+.hero {
+    height: 100vh;
+    background-color: var(--primary-dark);
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero__title {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--bg-white);
+}
+
+.hero__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-blue);
+}
+
+.hero__catch {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero__subcatch {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-light);
+}
+
+.hero__scroll-indicator {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    animation: bounce 2s infinite;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid var(--bg-white);
+    border-bottom: 2px solid var(--bg-white);
+    transform: rotate(45deg);
+}
+
+/* セクション共通 */
+section {
+    padding: var(--spacing-lg) 0;
+}
+
+/* 自己紹介セクション */
+.about {
+    background-color: var(--bg-white);
+}
+
+.about__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about__description {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.about__benefits {
+    list-style: none;
+    padding-left: var(--spacing-md);
+}
+
+.about__benefits li {
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+}
+
+.about__benefits li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+}
+
+/* 実績セクション */
+.works {
+    background-color: #f7fafc;
+}
+
+.works__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.work-card {
+    background: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.work-card__image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.work-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-card__content {
+    padding: var(--spacing-md);
+}
+
+.work-card__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.work-card__period {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.work-card__description {
+    margin-bottom: var(--spacing-md);
+}
+
+.work-card__link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-blue);
+    color: var(--bg-white);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.work-card__link:hover {
+    background-color: #2c5282;
+}
+
+/* スキルセクション */
+.skills__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills__tech, .skills__vibe {
+    background: var(--bg-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skills__list {
+    list-style: none;
+    margin-top: var(--spacing-sm);
+}
+
+.skills__list li {
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.skills__list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+}
+
+/* コンタクトセクション */
+.contact {
+    background-color: var(--primary-dark);
+    color: var(--bg-white);
+}
+
+.contact__content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact__message {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+.contact__links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.contact__link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-blue);
+    color: var(--bg-white);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.contact__link:hover {
+    background-color: #2c5282;
+}
+
+/* フッター */
+.footer {
+    background-color: var(--secondary-dark);
+    color: var(--bg-white);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+}
+
+/* アニメーション */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 3rem;
+        --spacing-md: 1.5rem;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__catch {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .works__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__catch {
+        font-size: 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+} 
