@@ -145,6 +145,84 @@ section {
     color: var(--accent-blue);
 }
 
+.about__subtitle {
+    font-size: 1.8rem;
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+    text-align: center;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.about__benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.benefit-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    color: var(--bg-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-item:nth-child(1) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.benefit-item:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.benefit-item:nth-child(3) {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.benefit-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--bg-white);
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+.benefit-item strong {
+    font-weight: 700;
+    color: var(--bg-white);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 /* 実績セクション */
 .works {
     background-color: #f7fafc;
@@ -357,6 +435,19 @@ section {
     .contact__links {
         flex-direction: column;
         gap: var(--spacing-sm);
+    }
+
+    .about__benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .benefit-item {
+        padding: var(--spacing-md);
+    }
+
+    .about__subtitle {
+        font-size: 1.5rem;
     }
 }
 
