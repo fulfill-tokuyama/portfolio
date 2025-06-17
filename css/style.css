@@ -533,6 +533,21 @@ section {
     .about__subtitle {
         font-size: 1.5rem;
     }
+
+    .hero__scroll-indicator {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero__scroll-indicator span {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -546,5 +561,22 @@ section {
 
     .section-title {
         font-size: 1.75rem;
+    }
+
+    .hero__scroll-indicator {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero__scroll-indicator span {
+        text-align: center;
+        width: 100%;
+        display: block;
     }
 } 
